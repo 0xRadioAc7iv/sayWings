@@ -130,7 +130,7 @@ const Page = () => {
           Deposit
         </button>
         <button
-          className="bg-black text-white py-3 flex items-center gap-3 justify-center"
+          className="bg-black text-white py-3 w-full mt-3 flex items-center gap-3 justify-center"
           onClick={() => {
             mintReceiptNft();
           }}

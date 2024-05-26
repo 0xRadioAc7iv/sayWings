@@ -1,5 +1,6 @@
 "use client";
-import React, { useState, useEffect } from "react";
+
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 interface NewsItem {
@@ -18,9 +19,7 @@ const NewsPage: React.FC = () => {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const response = await axios.get(
-          "http://localhost:3000/api/getNews"
-        );
+        const response = await axios.get("https://say-wings.vercel.app/api/getNews");
         setNews(response.data);
       } catch (error) {
         console.error("Error fetching news:", error);
@@ -39,10 +38,7 @@ const NewsPage: React.FC = () => {
         <h1 className="text-3xl font-bold mb-4">Latest News</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {[...Array(6)].map((_, index) => (
-            <div
-              key={index}
-              className="bg-gray-200 rounded p-4 animate-pulse"
-            >
+            <div key={index} className="bg-gray-200 rounded p-4 animate-pulse">
               <div className="h-4 bg-gray-300 mb-2 rounded"></div>
               <div className="h-4 bg-gray-300 mb-2 rounded"></div>
               <div className="h-4 bg-gray-300 mb-2 rounded"></div>
@@ -58,7 +54,7 @@ const NewsPage: React.FC = () => {
     <div className="container mx-auto py-8 px-8 border-2 border-black">
       <h1 className="text-3xl font-bold mb-4">Latest News</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {news.map((item) => (
+        {news.map(item => (
           <div
             key={item.id}
             className="bg-gray-100 rounded p-4 shadow-md transition duration-300 ease-in-out transform hover:scale-105"
