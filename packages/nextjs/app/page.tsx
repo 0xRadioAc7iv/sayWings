@@ -233,20 +233,28 @@ const Home: NextPage = () => {
             <div>
               <div className="w-[200px] h-10 justify-start items-start gap-10 inline-flex pt-4">
                 <div className="w-10 h-10 flex justify-center cursor-pointer items-center bg-white rounded-full border-2 border-black">
-                  <FaDiscord className="h-6 w-6" />
+                  <div className="h-6 w-6">
+                    <FaDiscord />
+                  </div>
                 </div>
                 <div className="w-10 h-10 flex justify-center cursor-pointer items-center bg-white rounded-full border-2 border-black">
-                  <FaSquareXTwitter className="h-6 w-6" />
+                  <div className="h-6 w-6">
+                    <FaSquareXTwitter />
+                  </div>
                 </div>
                 <div className="w-10 h-10 flex justify-center cursor-pointer items-center bg-white rounded-full border-2 border-black">
-                  <FaGithub className="h-6 w-6" />
+                  <div className="h-6 w-6">
+                    <FaGithub />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div className="flex items-center mt-6 gap-3 cursor-pointer">
             <div className="text-black text-lg underline">Start Investing!</div>
-            <FaArrowRightLong className="text-black h-6 w-6" />
+            <div className="text-black h-6 w-6">
+              <FaArrowRightLong />
+            </div>
           </div>
         </div>
       </div>

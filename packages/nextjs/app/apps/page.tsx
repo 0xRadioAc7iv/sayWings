@@ -10,15 +10,15 @@ const page = () => {
     <div className="px-32 h-[80vh] flex justify-center flex-col">
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <LabelButton icon={<IoMdSwitch className="" />} text="Filter" />
-          <LabelButton icon={<RiSortAsc className="" />} text="Sort" />
+          <LabelButton icon={<IoMdSwitch />} text="Filter" />
+          <LabelButton icon={<RiSortAsc />} text="Sort" />
         </div>
         <div>
           <Search />
         </div>
       </div>
       <div className="mt-8">
-      <AppDetailTable />
+        <AppDetailTable />
       </div>
     </div>
   );

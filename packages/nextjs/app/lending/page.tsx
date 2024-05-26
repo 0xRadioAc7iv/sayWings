@@ -18,35 +18,33 @@ const Page = () => {
 
   const handleAmountChange = (e: any) => {
     let value = e.target.value;
-  
+
     // Remove all non-numeric characters except for the first decimal point
     value = value.replace(/[^0-9.]/g, "");
-  
+
     // Remove additional decimal points if any
-    const parts = value.split('.');
+    const parts = value.split(".");
     if (parts.length > 2) {
-      value = parts[0] + '.' + parts.slice(1).join('');
+      value = parts[0] + "." + parts.slice(1).join("");
     }
-  
+
     setAmount(value);
   };
-  
 
   const handleAmountChangeNew = (e: any) => {
     let value = e.target.value;
-  
+
     // Remove all non-numeric characters except for the first decimal point
     value = value.replace(/[^0-9.]/g, "");
-  
+
     // Remove additional decimal points if any
-    const parts = value.split('.');
+    const parts = value.split(".");
     if (parts.length > 2) {
-      value = parts[0] + '.' + parts.slice(1).join('');
+      value = parts[0] + "." + parts.slice(1).join("");
     }
-  
+
     setAmountNew(value);
   };
-  
 
   const toggleAdvancedSettings = () => {
     setIsAdvancedOpen(!isAdvancedOpen);
@@ -112,7 +110,15 @@ const Page = () => {
           )}
           <button onClick={toggleAdvancedSettings} className="text-black/60 my-6 flex items-center gap-2 uppercase">
             Advanced Settings{" "}
-            {isAdvancedOpen ? <IoMdArrowDropup className="text-xl" /> : <IoMdArrowDropdown className="text-xl" />}
+            {isAdvancedOpen ? (
+              <div className="text-xl">
+                <IoMdArrowDropup />
+              </div>
+            ) : (
+              <div className="text-xl">
+                <IoMdArrowDropdown />
+              </div>
+            )}
           </button>
         </div>
         <button
@@ -134,7 +140,8 @@ const Page = () => {
       </div>
       <div className="text-[18px] font-semibold items-center gap-2 flex justify-center mt-10 text-green-800">
         <IoShieldCheckmark />
-        The smart contracts at SayWings are <span className="underline">verified</span> by ChainGPT&apos;s Audit API and SDK.
+        The smart contracts at SayWings are <span className="underline">verified</span> by ChainGPT&apos;s Audit API and
+        SDK.
       </div>
     </div>
   );
