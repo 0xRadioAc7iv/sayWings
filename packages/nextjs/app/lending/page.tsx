@@ -8,6 +8,7 @@ import { ethers } from "ethers";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { IoMdArrowDropup } from "react-icons/io";
 import { IoShieldCheckmark } from "react-icons/io5";
+import MintNFTReceipt from "~~/components/buttons/MintNFTReceipt";
 import MarketDropDown from "~~/components/dropdown/MarketDropDown";
 import TokenDropDown from "~~/components/dropdown/TokenDropDown";
 
@@ -15,6 +16,7 @@ const Page = () => {
   const [amount, setAmount] = useState("");
   const [amountNew, setAmountNew] = useState("");
   const [isAdvancedOpen, setIsAdvancedOpen] = useState(false);
+  const [isVisible, setVisible] = useState(false);
 
   const handleAmountChange = (e: any) => {
     let value = e.target.value;
@@ -58,19 +60,8 @@ const Page = () => {
     const signer = provider.getSigner(accounts[0]);
     const supplyContract = new ethers.Contract(addresses.CompoundContractAddress, CompoundSupplyABI, signer);
 
-    await supplyContract.supply(addresses.USDCCompoundContract, "1000000");
-  };
-
-  const mintReceiptNft = async () => {
-    const provider = new ethers.providers.Web3Provider(window.ethereum, "sepolia");
-
-    await provider.send("eth_requestAccounts", []);
-    const accounts = await provider.listAccounts();
-    const signer = provider.getSigner(accounts[0]);
-    const mintContract = new ethers.Contract(addresses.SepoliaNftAddress, nftAbi, signer);
-
-    const tx = await mintContract.safeMint(accounts[0], 1);
-    console.log(tx);
+    await supplyContract.supply(addresses.USDCCompoundContract, "100000");
+    setVisible(true);
   };
 
   return (
@@ -129,14 +120,7 @@ const Page = () => {
         >
           Deposit
         </button>
-        <button
-          className="bg-black text-white py-3 w-full mt-3 flex items-center gap-3 justify-center"
-          onClick={() => {
-            mintReceiptNft();
-          }}
-        >
-          Mint
-        </button>
+        {isVisible && <MintNFTReceipt />}
       </div>
       <div className="text-[18px] font-semibold items-center gap-2 flex justify-center mt-10 text-green-800">
         <IoShieldCheckmark />
