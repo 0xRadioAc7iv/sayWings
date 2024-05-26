@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { CompoundSupplyABI } from "../../utils/CompoundSupplyABI";
 import { addresses } from "../../utils/addresses";
-import { nftAbi } from "../../utils/nftAbi";
 import { ethers } from "ethers";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { IoMdArrowDropup } from "react-icons/io";
