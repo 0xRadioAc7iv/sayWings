@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import type { NextPage } from "next";
 import { FaDiscord } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
@@ -233,29 +234,25 @@ const Home: NextPage = () => {
             <div>
               <div className="w-[200px] h-10 justify-start items-start gap-10 inline-flex pt-4">
                 <div className="w-10 h-10 flex justify-center cursor-pointer items-center bg-white rounded-full border-2 border-black">
-                  <div className="h-6 w-6">
-                    <FaDiscord />
-                  </div>
+                  <FaDiscord />
                 </div>
                 <div className="w-10 h-10 flex justify-center cursor-pointer items-center bg-white rounded-full border-2 border-black">
-                  <div className="h-6 w-6">
-                    <FaSquareXTwitter />
-                  </div>
+                  <FaSquareXTwitter />
                 </div>
                 <div className="w-10 h-10 flex justify-center cursor-pointer items-center bg-white rounded-full border-2 border-black">
-                  <div className="h-6 w-6">
-                    <FaGithub />
-                  </div>
+                  <FaGithub />
                 </div>
               </div>
             </div>
           </div>
-          <div className="flex items-center mt-6 gap-3 cursor-pointer">
-            <div className="text-black text-lg underline">Start Investing!</div>
-            <div className="text-black h-6 w-6">
-              <FaArrowRightLong />
+          <Link href="/lending">
+            <div className="flex items-center mt-6 gap-3 cursor-pointer">
+              <div className="text-black text-lg underline">Start Investing!</div>
+              <div className="text-black h-6 w-6">
+                <FaArrowRightLong />
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     </div>
