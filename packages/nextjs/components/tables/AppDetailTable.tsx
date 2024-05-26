@@ -7,7 +7,7 @@ import dummyData, { Protocol } from "../../utils/dummyData";
 
 const AppDetailTable: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const rowsPerPage: number = 20;
+  const rowsPerPage = 20;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,6 +20,7 @@ const AppDetailTable: React.FC = () => {
     };
 
     fetchData();
+    setCurrentPage(1);
   }, []);
 
   const renderRowsForPage = (): JSX.Element[] => {

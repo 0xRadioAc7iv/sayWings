@@ -20,7 +20,7 @@ const Accordion: React.FC = () => {
           Q. What is Saywings?
         </div>
         <div className="collapse-content font-medium">
-          <p>A. Saywings is a DeFi savings platform built on Polygon that automates crypto investments for maximum returns. It's designed to be user-friendly, even for beginners.</p>
+          <p>A. Saywings is a DeFi savings platform built on Polygon that automates crypto investments for maximum returns. It&apos;s designed to be user-friendly, even for beginners.</p>
         </div>
       </div>
       

@@ -1,6 +1,6 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 
-export async function GET(req: NextRequest, res: NextResponse) {
+export async function GET() {
     try {
         const response = await fetch('https://yields.llama.fi/pools', {cache: "no-cache"});
         const dataObject = await response.json();

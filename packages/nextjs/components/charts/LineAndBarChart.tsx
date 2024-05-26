@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { ArcElement, Chart, DoughnutController, Legend, Tooltip } from "chart.js/auto";
+import { Chart } from "chart.js/auto";
 
 const roasData = {
   google: 3.5,

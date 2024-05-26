@@ -7,7 +7,7 @@ import portfolioData, { Protocol } from "../../utils/portfolioData";
 
 const PortfolioTable: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const rowsPerPage: number = 20;
+  const rowsPerPage = 20;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,6 +20,7 @@ const PortfolioTable: React.FC = () => {
     };
 
     fetchData();
+    setCurrentPage(1);
   }, []);
 
   const renderRowsForPage = (): JSX.Element[] => {

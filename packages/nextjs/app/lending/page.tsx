@@ -44,7 +44,7 @@ const Page = () => {
       value = parts[0] + '.' + parts.slice(1).join('');
     }
   
-    setAmount(value);
+    setAmountNew(value);
   };
   
 
@@ -134,7 +134,7 @@ const Page = () => {
       </div>
       <div className="text-[18px] font-semibold items-center gap-2 flex justify-center mt-10 text-green-800">
         <IoShieldCheckmark />
-        The smart contracts at SayWings are <span className="underline">verified</span> by ChainGPT's Audit API and SDK.
+        The smart contracts at SayWings are <span className="underline">verified</span> by ChainGPT&apos;s Audit API and SDK.
       </div>
     </div>
   );
