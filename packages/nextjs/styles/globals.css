@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+:root,
+[data-theme] {
+  background: oklch(var(--b2));
+}
+
+body {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+p {
+  margin: 1rem 0;
+}
+
+.btn {
+  @apply shadow-md;
+}
+
+.btn.btn-ghost {
+  @apply shadow-none;
+}
+
+.arrow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 32px solid transparent;
+  border-bottom: 32px solid transparent;
+  border-left: 16px solid black;
+  transform: translateX(100%);
+}
+
+.test {
+  position: absolute;
+  content: '';
+  transition: all .5s;
+}
+
+.button {
+  padding: 8px 8px;
+  width: 10rem;
+  color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  transition: all .5s;
+  background-color: #FFCE51;
+  border: 1px solid black;
+}
+
+.button::before {
+  position: absolute;
+  content: '';
+  bottom: -10px;
+  height: 10px;
+  width: 100%;
+  left: 4.5px;
+  transform: skewX(45deg);
+  background-color: #3498db;
+  border: 1px solid black;
+}
+
+.button::after {
+  position: absolute;
+  content: '';
+  right: -10px;
+  height: 100%;
+  width: 10px;
+  bottom: -4px;
+  transform: skewY(45deg);
+  background-color: #FFB9EC;
+  border: 1px solid black;
+}
+
+.button:active {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.button:active::before {
+  bottom: -5px;
+  height: 5px;
+  left: 3px;
+}
+
+.button:active::after {
+  right: -5px;
+  width: 5px;
+  bottom: -3px;
+}
+
+@keyframes fallAnimation {
+  0% {
+    transform: translateY(-00%);
+  }
+  100% {
+    transform: translateY(360%);
+  }
+}
+
+.falling-coin {
+  animation: fallAnimation 1.5s linear infinite;
+}
+
+@layer utilities {
+  .text-shadow-black {
+    text-shadow: 4px 4px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
+  }
+}
