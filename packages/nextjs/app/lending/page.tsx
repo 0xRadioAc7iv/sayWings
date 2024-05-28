@@ -59,7 +59,7 @@ const Page = () => {
     const signer = provider.getSigner(accounts[0]);
     const supplyContract = new ethers.Contract(addresses.CompoundContractAddress, CompoundSupplyABI, signer);
 
-    await supplyContract.supply(addresses.USDCCompoundContract, "100000");
+    await supplyContract.supply(addresses.USDCCompoundContract, "1");
     setVisible(true);
   };
 
